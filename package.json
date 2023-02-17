@@ -1,0 +1,61 @@
+{
+  "name": "reactadminpannel",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.11.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "antd": "^5.2.0",
+    "axios": "^0.21.4",
+    "bootstrap": "^5.2.3",
+    "chart.js": "^3.3.2",
+    "mdb-ui-kit": "^6.1.0",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
+    "react-bootstrap": "^2.7.0",
+    "react-data-table-component": "^7.5.3",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.7.1",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "reactjs-popup": "^2.0.5",
+    "sweetalert": "^2.1.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
