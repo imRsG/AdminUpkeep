@@ -3,7 +3,7 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import { MdEditNote, MdDeleteSweep } from 'react-icons/md';
 import { GrView } from 'react-icons/gr';
-import Popup from 'reactjs-popup';
+
 import { AiOutlineFolderAdd } from 'react-icons/ai'
 import { Button, Modal, Form } from 'react-bootstrap';
 
@@ -185,7 +185,7 @@ const Property = () => {
     },
     {
       name: "Description",
-
+      selector: (row) => row.description,
     },
     {
       name: "State",
@@ -232,7 +232,7 @@ const Property = () => {
 
       <DataTable title="Property" columns={columns} data={fileterData} pagination fixedHeader selectableRows highlightOnHover
         subHeader subHeaderComponent={
-          <>
+          <section className='mt-5 mb-5'>
             {/* delte modal  */}
             <Modal show={showModal} onHide={() => handleClose()} style={{ marginTop: "90px" }}>
               <Modal.Header closeButton>
@@ -304,7 +304,7 @@ const Property = () => {
 
             {/* update modal  */}
 
-            <Modal show={show4} onHide={handleClose4} style={{ marginTop: "60px" }}>
+            <Modal show={show4} onHide={handleClose4} style={{ paddingTop: "60px" }}>
               <Modal.Header closeButton>
                 <Modal.Title>Edit Property: {selectedRoww.id} </Modal.Title>
               </Modal.Header>
@@ -312,39 +312,39 @@ const Property = () => {
                 <Form>
                   <Form.Group controlId="formLandlord_Name" className="mb-3">
                     <Form.Label>Repairer Name</Form.Label>
-                    <Form.Control type="text" name="propertyName" defaultValue={selectedRoww?.propertyName} onChange={handleInputChange} />
+                    <Form.Control type="text" name="propertyName" defaultValue={selectedRoww.propertyName} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formLocation" className="mb-3">
                     <Form.Label>Property Capacity</Form.Label>
-                    <Form.Control type="number" name="propertyCapacity" defaultValue={selectedRoww?.propertyCapacity} onChange={handleInputChange} />
+                    <Form.Control type="number" name="propertyCapacity" defaultValue={selectedRoww.propertyCapacity} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formLocation" className="mb-3">
                     <Form.Label>Total Room</Form.Label>
-                    <Form.Control type="number" name="totalRoom" defaultValue={selectedRoww?.totalRoom} onChange={handleInputChange} />
+                    <Form.Control type="number" name="totalRoom" defaultValue={selectedRoww.totalRoom} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formRent" className="mb-3">
                     <Form.Label>Address 1</Form.Label>
-                    <Form.Control type="text" name="address1" defaultValue={selectedRoww?.address1} onChange={handleInputChange} />
+                    <Form.Control type="text" name="address1" defaultValue={selectedRoww.address1} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formRent" className="mb-3">
                     <Form.Label>Address 2</Form.Label>
-                    <Form.Control type="text" name="address2" defaultValue={selectedRoww?.address2} onChange={handleInputChange} />
+                    <Form.Control type="text" name="address2" defaultValue={selectedRoww.address2} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>City</Form.Label>
-                    <Form.Control type="text" name="city" defaultValue={selectedRoww?.city} onChange={handleInputChange} />
+                    <Form.Control type="text" name="city" defaultValue={selectedRoww.city} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>Postal Code</Form.Label>
-                    <Form.Control type="text" name="postCode" defaultValue={selectedRoww?.postCode} onChange={handleInputChange} />
+                    <Form.Control type="text" name="postCode" defaultValue={selectedRoww.postCode} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" name="description" defaultValue={selectedRoww?.description} onChange={handleInputChange} />
+                    <Form.Control type="text" name="description" defaultValue={selectedRoww.description} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>State</Form.Label>
-                    <Form.Control type="text" name="state" defaultValue={selectedRoww?.state} onChange={handleInputChange} />
+                    <Form.Control type="text" name="state" defaultValue={selectedRoww.state} onChange={handleInputChange} />
                   </Form.Group>
                   <Button variant="primary" className=' ms-2' onClick={() => {
                     handleUpdate();
@@ -360,7 +360,7 @@ const Property = () => {
               </Modal.Body>
             </Modal>
             {/* Create modal  */}
-            <Modal show={showModalC} onHide={() => handleCloseModal()} style={{ marginTop: "50px, 0", }}>
+            <Modal show={showModalC} onHide={() => handleCloseModal()} className='pb-5' style={{ marginTop: "70px" }}>
               <Modal.Header closeButton>
                 <Modal.Title>Add Property</Modal.Title>
               </Modal.Header>
@@ -426,7 +426,7 @@ const Property = () => {
               </div>
               <div><Button variant='primary' onClick={() => handleShowModal()}><AiOutlineFolderAdd className='me-3' /> create</Button></div>
             </div>
-          </>
+          </section>
         }
       />
     </>

@@ -3,19 +3,20 @@ import "mdb-ui-kit/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./pages/home";
-import Createlandlord from "./Components/CreateData/Createlandlord";
 
 // import Signup from "./Components/BodyComponent/Signup";
 import Signin from './Components/BodyComponent/Signin';
 function App() {
-  // const token = localStorage.getItem('accessToken');
-  // if (!token) {
-  //   return <Signin />
-  // }
+  const token = localStorage.getItem('accessToken');
+  console.log(token)
+  if (!token) {
+    return <Signin />
+
+  }
+  console.log(token)
   return (
     <div className="wrapper">
       {/* <Signup /> */}
-      {/* <Createlandlord /> */}
       <BrowserRouter>
         <Switch>
           <Route path="/home">

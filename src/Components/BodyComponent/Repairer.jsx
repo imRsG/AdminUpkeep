@@ -9,26 +9,6 @@ import { Button, Modal, Form } from 'react-bootstrap';
 
 const Repairer = () => {
 
-  // update functioning in modal
-  // const [showModal1, setShowModal1] = useState(false);
-  // const [selectedData, setSelectedData] = useState(null);
-
-  // const handleRowClick = (row) => {
-  //   setSelectedData(row);
-  //   setShowModal1(true);
-  // };
-  // const handleUpdate = (id) => {
-  //   axios.put(`http://upkeep.crmcity.org:8093/adminpanel/repaircont/${id}`, selectedData)
-  //     .then((response) => {
-  //       // Handle successful update
-  //       // Update the data in your state or re-fetch the data
-  //     })
-  //     .catch((error) => {
-  //       // Handle error
-  //     });
-  // };
-
-
   //  delte modal function
 
   const [showModal, setShowModal] = useState(false);
@@ -211,7 +191,7 @@ const Repairer = () => {
   }, []);
   useEffect(() => {
     const result = repairs.filter(Repairer => {
-      return Repairer.name.toLowerCase().match(search.toLocaleLowerCase());
+      return (Repairer.name, Repairer.type_of_repairs).toLowerCase().match(search.toLocaleLowerCase());
 
     });
     setFilterData(result)
@@ -225,57 +205,7 @@ const Repairer = () => {
       <DataTable title="RepaireList" columns={columns} data={fileterData} pagination fixedHeader selectableRows highlightOnHover
         subHeader
         subHeaderComponent={
-          <>
-            {/* <Modal show={showModal1} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Edit Data</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <Form>
-                  <Form.Group controlId="formBasicName">
-                    <Form.Control
-                      type="text"
-                      placeholder='name'
-                      defaultValue={selectedData.name}
-                      onChange={(e) => setSelectedData({ ...selectedData, name: e.target.value })}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      type="email"
-                      placeholder='email'
-                      defaultValue={selectedData.email}
-                      onChange={(e) => setSelectedData({ ...selectedData, email: e.target.value })}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      type="number"
-                      placeholder='Contact no.'
-                      defaultValue={selectedData.contact_no}
-                      onChange={(e) => setSelectedData({ ...selectedData, contact_no: e.target.value })}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="text"
-                      defaultValue={selectedData.type_of_repairs}
-                      placeholder="type of repairer"
-                      onChange={(e) => setSelectedData({ ...selectedData, type_of_repairs: e.target.value })}
-                    />
-                  </Form.Group>
-                </Form>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Cancel
-                </Button>
-                <Button variant="primary" onClick={handleUpdate}>
-                  Save Changes
-                </Button>
-              </Modal.Footer>
-            </Modal> */}
+          <section className='pt-5'>
             {/* delte modal  */}
             <Modal show={showModal} onHide={() => handleClose()} style={{ marginTop: "90px" }}>
               <Modal.Header closeButton>
@@ -311,19 +241,19 @@ const Repairer = () => {
                 <Form>
                   <Form.Group controlId="formLandlord_Name" className="mb-3">
                     <Form.Label>Repairer Name</Form.Label>
-                    <Form.Control type="text" name="tenant_name" defaultValue={selectedRoww?.name} onChange={handleInputChange} />
+                    <Form.Control type="text" name="tenant_name" defaultValue={selectedRoww.name} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formLocation" className="mb-3">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" name="location" defaultValue={selectedRoww?.email} onChange={handleInputChange} />
+                    <Form.Control type="email" name="location" defaultValue={selectedRoww.email} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formRent" className="mb-3">
                     <Form.Label>conatact No.</Form.Label>
-                    <Form.Control type="number" name="contact_no" defaultValue={selectedRoww?.contact_no} onChange={handleInputChange} />
+                    <Form.Control type="number" name="contact_no" defaultValue={selectedRoww.contact_no} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>Type of repaire</Form.Label>
-                    <Form.Control type="text" name="type_of_repairs" defaultValue={selectedRoww?.type_of_repairs} onChange={handleInputChange} />
+                    <Form.Control type="text" name="type_of_repairs" defaultValue={selectedRoww.type_of_repairs} onChange={handleInputChange} />
                   </Form.Group>
                   <Button variant="primary" className=' ms-2' onClick={() => {
                     handleUpdate();
@@ -434,7 +364,7 @@ const Repairer = () => {
               </div>
               <div><Button variant='primary' onClick={() => handleShowModal()}><AiOutlineFolderAdd className='me-3' /> create</Button></div>
             </div>
-          </>
+          </section>
         }
       />
     </>

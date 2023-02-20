@@ -51,8 +51,8 @@ const Landloard = () => {
     try {
       const response = await axios.post("http://upkeep.crmcity.org:8093/adminpanel/landlord/", formData);
       console.log(response.data);
-      getLandloard();
       handleCloseModal();
+      getLandloard();
     } catch (error) {
       console.log(error);
     }
@@ -312,19 +312,19 @@ const Landloard = () => {
                 <Form>
                   <Form.Group controlId="formLandlord_Name" className="mb-3">
                     <Form.Label>Landlord Name</Form.Label>
-                    <Form.Control type="text" name="landlord_name" defaultValue={selectedRoww?.landlord_name} onChange={handleInputChange} />
+                    <Form.Control type="text" name="landlord_name" defaultValue={selectedRoww.landlord_name} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formLocation" className="mb-3">
                     <Form.Label>Loation</Form.Label>
-                    <Form.Control type="text" name="location" defaultValue={selectedRoww?.location} onChange={handleInputChange} />
+                    <Form.Control type="text" name="location" defaultValue={selectedRoww.location} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formRent" className="mb-3">
                     <Form.Label>Rent</Form.Label>
-                    <Form.Control type="number" name="rent" defaultValue={selectedRoww?.rent} onChange={handleInputChange} />
+                    <Form.Control type="number" name="rent" defaultValue={selectedRoww.rent} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>Create</Form.Label>
-                    <Form.Control type="date" name="created_at" defaultValue={selectedRoww?.created_at} onChange={handleInputChange} />
+                    <Form.Control type="date" name="created_at" defaultValue={selectedRoww.created_at} onChange={handleInputChange} />
                   </Form.Group>
                   <Button variant="primary" className=' ms-2' onClick={() => {
                     handleUpdate();

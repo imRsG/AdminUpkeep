@@ -184,7 +184,6 @@ const Tenant = () => {
   ]
   useEffect(() => {
     getTenant();
-    // deleteRecord();
   }, []);
 
   useEffect(() => {
@@ -229,19 +228,19 @@ const Tenant = () => {
                 <Form>
                   <Form.Group controlId="formLandlord_Name" className="mb-3">
                     <Form.Label>Tenant Name</Form.Label>
-                    <Form.Control type="text" name="tenant_name" defaultValue={selectedRoww?.tenant_name} onChange={handleInputChange} />
+                    <Form.Control type="text" name="tenant_name" defaultValue={selectedRoww.tenant_name} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formLocation" className="mb-3">
                     <Form.Label>Loation</Form.Label>
-                    <Form.Control type="text" name="location" defaultValue={selectedRoww?.location} onChange={handleInputChange} />
+                    <Form.Control type="text" name="location" defaultValue={selectedRoww.location} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formRent" className="mb-3">
                     <Form.Label>Moved in</Form.Label>
-                    <Form.Control type="date" name="moved_in" defaultValue={selectedRoww?.moved_in} onChange={handleInputChange} />
+                    <Form.Control type="date" name="moved_in" defaultValue={selectedRoww.moved_in} onChange={handleInputChange} />
                   </Form.Group>
                   <Form.Group controlId="formCreate" className="mb-3">
                     <Form.Label>Moved out</Form.Label>
-                    <Form.Control type="date" name="moved_out" defaultValue={selectedRoww?.moved_out} onChange={handleInputChange} />
+                    <Form.Control type="date" name="moved_out" defaultValue={selectedRoww.moved_out} onChange={handleInputChange} />
                   </Form.Group>
                   <Button variant="primary" className=' ms-2' onClick={() => {
                     handleUpdate();
